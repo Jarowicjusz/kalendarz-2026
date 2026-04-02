@@ -17,29 +17,13 @@
     --text3: #55546a;
     --accent: #6b63ff;
 
-    --vacation-bg: rgba(34,197,129,0.13);
-    --vacation-tx: #4ade9e;
-    --vacation-bar: #22c581;
+    --vacation-bg: rgba(244,114,182,0.13);
+    --vacation-tx: #f9a8d4;
+    --vacation-bar: #ec4899;
 
-    --company-bg: rgba(99,130,255,0.13);
-    --company-tx: #7b9fff;
-    --company-bar: #6382ff;
-
-    --meeting-bg: rgba(251,191,36,0.1);
-    --meeting-tx: #fbbf24;
-    --meeting-bar: #f59e0b;
-
-    --deadline-bg: rgba(248,113,113,0.12);
-    --deadline-tx: #f87171;
-    --deadline-bar: #ef4444;
-
-    --holiday-bg: rgba(167,139,250,0.13);
-    --holiday-tx: #c4b5fd;
-    --holiday-bar: #a78bfa;
-
-    --birthday-bg: rgba(244,114,182,0.12);
-    --birthday-tx: #f472b6;
-    --birthday-bar: #ec4899;
+    --company-bg: rgba(34,197,129,0.13);
+    --company-tx: #4ade9e;
+    --company-bar: #22c581;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,7 +37,6 @@
     font-size: 14px;
   }
 
-  /* ── Header ── */
   .header {
     display: flex;
     align-items: center;
@@ -63,11 +46,7 @@
     flex-wrap: wrap;
   }
 
-  .header-left {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-  }
+  .header-left { display: flex; align-items: baseline; gap: 14px; }
 
   .month-name {
     font-size: 32px;
@@ -83,11 +62,7 @@
     letter-spacing: .04em;
   }
 
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .header-right { display: flex; align-items: center; gap: 10px; }
 
   .nav-btn {
     background: var(--surface2);
@@ -112,12 +87,10 @@
     font-size: 13px;
     font-weight: 500;
     font-family: inherit;
-    letter-spacing: .01em;
     transition: opacity .15s;
   }
   .add-btn:hover { opacity: .85; }
 
-  /* ── Legend ── */
   .legend {
     display: flex;
     gap: 20px;
@@ -138,14 +111,8 @@
     transition: opacity .15s;
   }
   .leg-item.hidden { opacity: .28; }
-  .leg-dot {
-    width: 20px;
-    height: 6px;
-    border-radius: 3px;
-    flex-shrink: 0;
-  }
+  .leg-dot { width: 22px; height: 6px; border-radius: 3px; flex-shrink: 0; }
 
-  /* ── Calendar grid ── */
   .cal-container { border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; }
 
   .day-headers {
@@ -165,8 +132,6 @@
     text-transform: uppercase;
   }
   .dh.we { color: #6b5a4e; }
-
-  .cal-body {}
 
   .week-row {
     display: grid;
@@ -207,14 +172,10 @@
     border-radius: 50%;
     margin-bottom: 2px;
   }
-  .day-cell.today .day-num {
-    background: var(--accent);
-    color: #fff;
-  }
+  .day-cell.today .day-num { background: var(--accent); color: #fff; }
   .day-cell.we .day-num { color: #6b5060; }
   .day-cell.other .day-num { opacity: .25; }
 
-  /* ── Span bars overlay ── */
   .spans-layer {
     position: absolute;
     top: 36px;
@@ -240,7 +201,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border-radius: 0;
     margin: 1px 0;
   }
   .sbar.si { border-radius: 4px; margin: 1px 4px; }
@@ -250,12 +210,8 @@
 
   .sbar.vacation { background: var(--vacation-bg); color: var(--vacation-tx); }
   .sbar.company  { background: var(--company-bg);  color: var(--company-tx); }
-  .sbar.meeting  { background: var(--meeting-bg);  color: var(--meeting-tx); }
-  .sbar.deadline { background: var(--deadline-bg); color: var(--deadline-tx); }
-  .sbar.holiday  { background: var(--holiday-bg);  color: var(--holiday-tx); }
-  .sbar.birthday { background: var(--birthday-bg); color: var(--birthday-tx); }
 
-  /* ── Modal ── */
+  /* Modal */
   .modal-overlay {
     display: none;
     position: fixed;
@@ -280,13 +236,7 @@
     to   { opacity:1; transform: translateY(0); }
   }
 
-  .modal h3 {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 1.25rem;
-    letter-spacing: -.2px;
-  }
+  .modal h3 { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; letter-spacing: -.2px; }
 
   .modal label {
     font-size: 11px;
@@ -315,19 +265,13 @@
 
   .date-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-  .modal-btns {
-    display: flex;
-    gap: 8px;
-    margin-top: 1.5rem;
-    align-items: center;
-    justify-content: flex-end;
-  }
+  .modal-btns { display: flex; gap: 8px; margin-top: 1.5rem; align-items: center; justify-content: flex-end; }
 
-  .btn-del  { background:none; border:0.5px solid rgba(239,68,68,.4); color:#f87171; border-radius:7px; padding:7px 14px; font-size:13px; cursor:pointer; font-family:inherit; margin-right:auto; }
+  .btn-del    { background:none; border:0.5px solid rgba(239,68,68,.4); color:#f87171; border-radius:7px; padding:7px 14px; font-size:13px; cursor:pointer; font-family:inherit; margin-right:auto; }
   .btn-del:hover { background: rgba(239,68,68,.1); }
   .btn-cancel { background:none; border:0.5px solid var(--border2); color:var(--text2); border-radius:7px; padding:7px 14px; font-size:13px; cursor:pointer; font-family:inherit; }
   .btn-cancel:hover { background: var(--surface2); }
-  .btn-save { background:var(--accent); border:none; color:#fff; border-radius:7px; padding:8px 18px; font-size:13px; font-weight:500; cursor:pointer; font-family:inherit; }
+  .btn-save   { background:var(--accent); border:none; color:#fff; border-radius:7px; padding:8px 18px; font-size:13px; font-weight:500; cursor:pointer; font-family:inherit; }
   .btn-save:hover { opacity:.88; }
 </style>
 </head>
@@ -352,7 +296,6 @@
   <div class="cal-body" id="calBody"></div>
 </div>
 
-<!-- Modal -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal" onclick="event.stopPropagation()">
     <h3 id="modalTitle">Nowy event</h3>
@@ -377,12 +320,8 @@ const MONTHS = ['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec'
 const DAYS   = ['Pon','Wt','Śr','Czw','Pt','Sob','Nie'];
 
 const CATS = [
-  { id:'vacation', label:'Urlop',          bar:'#22c581' },
-  { id:'company',  label:'Event firmowy',  bar:'#6382ff' },
-  { id:'meeting',  label:'Spotkanie',      bar:'#f59e0b' },
-  { id:'deadline', label:'Deadline',       bar:'#ef4444' },
-  { id:'holiday',  label:'Święto',         bar:'#a78bfa' },
-  { id:'birthday', label:'Urodziny',       bar:'#ec4899' },
+  { id:'vacation', label:'Urlop',         bar:'#ec4899' },
+  { id:'company',  label:'Event firmowy', bar:'#22c581' },
 ];
 
 function d(y,m,day){ return new Date(y,m,day).getTime(); }
@@ -393,27 +332,24 @@ let state = {
   editId: null,
   nextId: 200,
   events: [
-    { id:1,  title:'Martyna Z. — urlop',        cat:'vacation', start:d(2026,3,2),  end:d(2026,3,8)  },
-    { id:2,  title:'Karolina P. — urlop',       cat:'vacation', start:d(2026,3,2),  end:d(2026,3,4)  },
-    { id:3,  title:'Aneta K-K — urlop',         cat:'vacation', start:d(2026,3,3),  end:d(2026,3,3)  },
-    { id:4,  title:'Joanna F. — urlop',         cat:'vacation', start:d(2026,3,3),  end:d(2026,3,4)  },
-    { id:5,  title:'Anna — urlop',              cat:'vacation', start:d(2026,3,4),  end:d(2026,3,5)  },
-    { id:6,  title:'Maciej — urlop',            cat:'vacation', start:d(2026,3,4),  end:d(2026,3,11) },
-    { id:7,  title:'Dokumentacja – Zakopane',   cat:'vacation', start:d(2026,3,11), end:d(2026,3,13) },
-    { id:8,  title:'Martyna Z. — urlop',        cat:'vacation', start:d(2026,3,27), end:d(2026,4,3)  },
-    { id:9,  title:'P&G x Biedronka',           cat:'company',  start:d(2026,3,1),  end:d(2026,3,2)  },
-    { id:10, title:'Gala Stypendystów – Żabka', cat:'company',  start:d(2026,3,9),  end:d(2026,3,10) },
-    { id:11, title:'Pepsi Transmisja',           cat:'company',  start:d(2026,3,10), end:d(2026,3,10) },
-    { id:12, title:'Hebe otwarcie – Gdynia',    cat:'company',  start:d(2026,3,2),  end:d(2026,3,4)  },
-    { id:13, title:'Hebe otwarcie – Ozorki',    cat:'company',  start:d(2026,3,25), end:d(2026,3,26) },
-    { id:14, title:'SGP – Monachium',           cat:'company',  start:d(2026,4,1),  end:d(2026,4,2)  },
-    { id:15, title:'Dr Witt x Żabka',           cat:'company',  start:d(2026,3,27), end:d(2026,3,28) },
-    { id:16, title:'Urodziny',                  cat:'birthday', start:d(2026,3,1),  end:d(2026,3,1)  },
-    { id:17, title:'1 maja – Święto Pracy',     cat:'holiday',  start:d(2026,4,1),  end:d(2026,4,1)  },
-    { id:18, title:'Warsaw Food Expo 2026',     cat:'company',  start:d(2026,3,9),  end:d(2026,3,9)  },
-    { id:19, title:'Trikla & Top Art',          cat:'company',  start:d(2026,3,7),  end:d(2026,3,7)  },
-    { id:20, title:'Zappka x Top-art',          cat:'company',  start:d(2026,3,9),  end:d(2026,3,9)  },
-    { id:21, title:'Event DR WITT – Hipotonix', cat:'company',  start:d(2026,3,1),  end:d(2026,3,1)  },
+    // Urlopy kwiecień
+    { id:1,  title:'Martyna Z. — urlop',      cat:'vacation', start:d(2026,3,2),  end:d(2026,3,8)  },
+    { id:2,  title:'Karolina P. — urlop',     cat:'vacation', start:d(2026,3,2),  end:d(2026,3,3)  },
+    { id:3,  title:'Aneta K-K — urlop',       cat:'vacation', start:d(2026,3,3),  end:d(2026,3,3)  },
+    { id:4,  title:'Joanna F. — urlop',       cat:'vacation', start:d(2026,3,3),  end:d(2026,3,4)  },
+    { id:5,  title:'Anna — urlop',            cat:'vacation', start:d(2026,3,4),  end:d(2026,3,4)  },
+    { id:6,  title:'Maciej — urlop',          cat:'vacation', start:d(2026,3,4),  end:d(2026,3,11) },
+    { id:7,  title:'Dokumentacja – Zakopane', cat:'vacation', start:d(2026,3,11), end:d(2026,3,13) },
+    { id:8,  title:'Martyna Z. — urlop',      cat:'vacation', start:d(2026,3,27), end:d(2026,4,3)  },
+    // Eventy firmowe kwiecień
+    { id:9,  title:'P&G x Biedronka',           cat:'company', start:d(2026,3,1),  end:d(2026,3,2)  },
+    { id:10, title:'Hebe otwarcie – Gdynia',    cat:'company', start:d(2026,3,2),  end:d(2026,3,4)  },
+    { id:11, title:'Gala Stypendystów',          cat:'company', start:d(2026,3,9),  end:d(2026,3,10) },
+    { id:12, title:'Pepsi transmisja',           cat:'company', start:d(2026,3,10), end:d(2026,3,10) },
+    { id:13, title:'Dokumentacja – zakopane',   cat:'company', start:d(2026,3,11), end:d(2026,3,12) },
+    { id:14, title:'Hebe otwarcie – Ozorki',    cat:'company', start:d(2026,3,25), end:d(2026,3,26) },
+    { id:15, title:'Dr Witt x Żabka',           cat:'company', start:d(2026,3,27), end:d(2026,3,28) },
+    { id:16, title:'SGP – Monachium',           cat:'company', start:d(2026,4,1),  end:d(2026,4,2)  },
   ]
 };
 
@@ -462,13 +398,11 @@ function renderBody() {
   weeks.forEach(wk => {
     const wt = wk.map(c => new Date(c.y, c.m, c.day).getTime());
 
-    // gather visible events that intersect this week
     const visEvs = state.events.filter(e => {
       if (state.hidden.has(e.cat)) return false;
       return e.end >= wt[0] && e.start <= wt[6];
     });
 
-    // slot placement
     const slotMap = {};
     const placed  = [];
     visEvs.forEach(e => {
@@ -491,7 +425,6 @@ function renderBody() {
 
     const maxSlot = placed.length ? Math.max(...placed.map(p => p.slot)) : -1;
 
-    // build span rows
     let spansHtml = '';
     for (let s = 0; s <= maxSlot; s++) {
       const row = placed.filter(p => p.slot === s);
@@ -503,7 +436,7 @@ function renderBody() {
             const first = t === e.start || (di === 0 && e.start < t);
             const last  = t === e.end   || (di === 6 && e.end   > t);
             const showLabel = di === 0 || (e.start >= wt[0] && t === e.start);
-            let pos = first && last ? 'si' : first ? 'ss' : last ? 'se' : 'sm';
+            const pos = first && last ? 'si' : first ? 'ss' : last ? 'se' : 'sm';
             cols[di] = `<div class="sbar ${e.cat} ${pos}">${showLabel ? e.title : ''}</div>`;
           }
         }
@@ -513,12 +446,11 @@ function renderBody() {
 
     const minH = Math.max(108, 40 + (maxSlot + 1) * 25 + 10);
 
-    // build day cells
-    let cellsHtml = wk.map(c => {
-      const dow   = new Date(c.y, c.m, c.day).getDay();
-      const isWe  = dow === 0 || dow === 6;
-      const isTd  = c.day === today.getDate() && c.m === today.getMonth() && c.y === today.getFullYear();
-      const cls   = ['day-cell', c.other?'other':'', isWe?'we':'', isTd?'today':''].filter(Boolean).join(' ');
+    const cellsHtml = wk.map(c => {
+      const dow  = new Date(c.y, c.m, c.day).getDay();
+      const isWe = dow === 0 || dow === 6;
+      const isTd = c.day === today.getDate() && c.m === today.getMonth() && c.y === today.getFullYear();
+      const cls  = ['day-cell', c.other?'other':'', isWe?'we':'', isTd?'today':''].filter(Boolean).join(' ');
       return `<div class="${cls}" style="min-height:${minH}px">
         <span class="day-num">${c.day}</span>
       </div>`;
@@ -533,7 +465,6 @@ function renderBody() {
   document.getElementById('calBody').innerHTML = html;
 }
 
-// ── Navigation ──
 window.nav = dir => {
   state.month += dir;
   if (state.month > 11) { state.month = 0; state.year++; }
@@ -546,7 +477,6 @@ window.toggleCat = cat => {
   render();
 };
 
-// ── Modal ──
 function populateCatSelect(selected) {
   document.getElementById('mCat').innerHTML = CATS.map(c =>
     `<option value="${c.id}"${c.id === selected ? ' selected' : ''}>${c.label}</option>`
